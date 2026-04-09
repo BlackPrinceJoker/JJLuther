@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stylish Image Display</title>
     <style>
-        /* Base page styling */
         body {
             font-family: sans-serif;
-            background-color: #f4f4f9;
+            background-color: #f0f2f5; /* Slightly softer background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,58 +15,54 @@
             margin: 0;
         }
 
-        /* Container for the images */
         .image-gallery {
             display: flex;
-            gap: 30px; /* Space between the images */
+            gap: 40px; /* Increased gap for better breathing room */
             padding: 20px;
-            max-width: 1000px;
+            max-width: 1200px;
             width: 100%;
-            flex-wrap: wrap; /* Allows stacking on smaller screens */
+            flex-wrap: wrap;
             justify-content: center;
         }
 
-        /* Individual image card styling */
         .image-card {
             flex: 1;
-            min-width: 300px; /* Ensures they don't get too small before stacking */
+            min-width: 350px;
+            aspect-ratio: 16 / 9; /* Forces both cards to be perfectly identical widescreen rectangles */
             border-radius: 12px;
-            overflow: hidden; /* Keeps the rounded corners when the image zooms */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Softer, wider shadow */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background-color: #fff;
+            display: flex; 
         }
 
-        /* Hover effect for the card */
         .image-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
         }
 
-        /* The actual image */
         .image-card img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; /* The magic fix: forces the image to stretch and fill the space completely */
             display: block;
             transition: transform 0.5s ease;
         }
 
-        /* Slight zoom on the image when hovering over the card */
         .image-card:hover img {
-            transform: scale(1.03);
+            transform: scale(1.05); /* Slightly smoother zoom */
         }
-
     </style>
 </head>
 <body>
 
     <div class="image-gallery">
         <div class="image-card">
-            <img src="PictureA.png" alt="Description of Picture A">
+            <img src="PictureA.png" alt="Baptist Catechism">
         </div>
-
         <div class="image-card">
-            <img src="PictureB.png" alt="Description of Picture B">
+            <img src="PictureB.png" alt="Heidelberg Catechism">
         </div>
     </div>
 
