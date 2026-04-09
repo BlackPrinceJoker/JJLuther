@@ -7,31 +7,30 @@
     <style>
         body {
             font-family: sans-serif;
-            background-color: #f0f2f5; /* Slightly softer background */
+            background-color: #f0f2f5;
             display: flex;
             justify-content: center;
-            align-items: center;
+            /* Removed align-items: center so it scrolls normally when stacked */
             min-height: 100vh;
             margin: 0;
+            padding: 40px 20px; /* Adds space at the top and bottom of the page */
         }
 
         .image-gallery {
             display: flex;
-            gap: 40px; /* Increased gap for better breathing room */
-            padding: 20px;
-            max-width: 1200px;
+            flex-direction: column; /* This forces the vertical stacking */
+            align-items: center;    /* Keeps them centered in the column */
+            gap: 40px; 
             width: 100%;
-            flex-wrap: wrap;
-            justify-content: center;
+            max-width: 800px;       /* Limits how wide they get on desktop */
         }
 
         .image-card {
-            flex: 1;
-            min-width: 350px;
-            aspect-ratio: 16 / 9; /* Forces both cards to be perfectly identical widescreen rectangles */
+            width: 100%;            /* Fills the 800px gallery container */
+            aspect-ratio: 16 / 9; 
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Softer, wider shadow */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background-color: #fff;
             display: flex; 
@@ -45,13 +44,13 @@
         .image-card img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* The magic fix: forces the image to stretch and fill the space completely */
+            object-fit: cover; 
             display: block;
             transition: transform 0.5s ease;
         }
 
         .image-card:hover img {
-            transform: scale(1.05); /* Slightly smoother zoom */
+            transform: scale(1.05); 
         }
     </style>
 </head>
@@ -59,10 +58,10 @@
 
     <div class="image-gallery">
         <div class="image-card">
-            <img src="PictureA.png" alt="Baptist Catechism">
+            <img src="PictureA.jpg" loading="lazy" decoding="async" alt="Baptist Catechism">
         </div>
         <div class="image-card">
-            <img src="PictureB.png" alt="Heidelberg Catechism">
+            <img src="PictureB.jpg" loading="lazy" decoding="async" alt="Heidelberg Catechism">
         </div>
     </div>
 
