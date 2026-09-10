@@ -50,21 +50,60 @@
         .image-card:hover img {
             transform: scale(1.03); /* Reduced zoom slightly so it doesn't feel overwhelming on larger images */
         }
+        .article-card {
+    display: block;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background: white;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.article-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.article-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.article-content {
+    padding: 20px;
+}
+
+.article-content h2 {
+    margin: 0 0 10px;
+}
+
+.article-content p {
+    margin: 0 0 15px;
+}
+
+.article-content span {
+    font-weight: bold;
+}
     </style>
 </head>
 <body>
 
     <a href="https://joshualuther1.substack.com/p/christian-middle-management"
-       target="_blank"
-       class="substack-card">
+   target="_blank"
+   class="article-card">
 
+    <img src="cover.png" alt="Christian Middle Management">
+
+    <div class="article-content">
         <h2>Christian Middle Management</h2>
-
-        <p>
-            Building Christian communities from the household upward.
-        </p>
-
+        <p>Building Christian communities from the household upward.</p>
         <span>Read on Substack →</span>
+    </div>
 
     </a>
 
